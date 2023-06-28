@@ -1,0 +1,131 @@
+# ::id PROXY_LTW_ENG_20070514_0055.8
+(z1 / state-01
+    :ARG0 (z2 / person
+              :ARG0-of (z3 / have-org-role-91
+                           :ARG1 (z4 / country
+                                     :wiki "China"
+                                     :name (z5 / name
+                                               :op1 "China"))
+                           :ARG2 (z6 / official)))
+    :ARG1 (z7 / and
+              :op1 (z8 / operate-01
+                       :ARG1 (z9 / satellite)
+                       :time (z10 / by
+                                  :op1 (z11 / end-01
+                                            :ARG1 (z12 / date-entity
+                                                       :year 2007))))
+              :op2 (z13 / expect-01
+                        :ARG1 (z14 / last-03
+                                   :ARG1 z9
+                                   :ARG2 (z15 / temporal-quantity
+                                              :quant 15
+                                              :unit (z16 / year)))))
+    :mod (z17 / also))
+
+# ::id nw.wsj_0004.1
+(z1 / continue-01
+    :ARG1 (z2 / slide-01
+              :ARG1 (z3 / yield-01
+                        :ARG0 (z4 / fund
+                                  :mod (z5 / mutual)
+                                  :mod (z6 / market
+                                           :mod (z7 / money)))))
+    :prep-amid (z8 / signal-07
+                   :ARG1 (z9 / expect-01
+                             :ARG0 (z10 / person
+                                        :ARG0-of (z11 / manage-01
+                                                      :ARG1 (z12 / portfolio)))
+                             :ARG1 (z13 / decline-01
+                                        :ARG1 (z14 / rate
+                                                   :mod (z15 / interest))
+                                        :degree (z16 / further)))))
+
+# ::id NW_ABC_ENG_0002_2000_1026.13
+(z1 / contain-01
+    :ARG0 (z2 / note)
+    :ARG1 (z3 / evidence-01
+              :polarity -
+              :ARG1 (z4 / thing
+                        :ARG0-of (z5 / sink-01
+                                     :ARG1 (z6 / submarine
+                                               :wiki "Russian_submarine_Kursk_(K-141)"
+                                               :name (z7 / name
+                                                         :op1 "Kursk"))))
+              :ARG1-of (z8 / new-01)
+              :ARG1-of (z9 / regardless-91
+                           :ARG2 (z10 / or
+                                      :op1 (z11 / explode-01
+                                                :ARG1-of (z12 / internal-02))
+                                      :op2 (z13 / collide-01)
+                                      :domain z4))))
+
+# ::id DF-199-193694-586_5859.1
+(z1 / say-01
+    :ARG1 (z2 / chance-02
+              :ARG0 (z3 / she)
+              :ARG1 (z4 / dethron-01
+                        :ARG0 z3
+                        :ARG1 (z5 / person
+                                  :wiki "Scott_Brown"
+                                  :name (z6 / name
+                                            :op1 "Scott"
+                                            :op2 "Brown")
+                                  :ARG0-of (z7 / have-org-role-91
+                                               :ARG1 (z8 / political-party
+                                                         :wiki "Republican_Party_(United_States)"
+                                                         :name (z9 / name
+                                                                   :op1 "Republican"))
+                                               :ARG2 (z10 / senator)
+                                               :time (z11 / sitting))))
+              :ARG2 (z12 / any)
+              :polarity (z13 / amr-unknown))
+    :ARG2 (z14 / person
+               :mod (z15 / state
+                         :wiki "Massachusetts"
+                         :name (z16 / name
+                                    :op1 "Massachussets"))
+               :mod (z17 / dear))
+    :mod (z18 / so))
+
+# ::id PROXY_APW_ENG_20080926_1157.5
+(z1 / plan-01
+    :ARG0 (z2 / person
+              :wiki "Dmitry_Medvedev"
+              :name (z3 / name
+                        :op1 "Medvedev"))
+    :ARG1 (z4 / in-place
+              :domain (z5 / system
+                          :ARG0-of (z6 / deter-01
+                                       :mod (z7 / nucleus))
+                          :ARG1-of (z8 / guarantee-01)
+                          :ARG2-of (z9 / include-01
+                                       :ARG1 (z10 / and
+                                                  :op1 (z11 / warship)
+                                                  :op2 (z12 / submarine
+                                                            :ARG1-of (z13 / power-01
+                                                                          :ARG0 z7)))))
+              :time (z14 / by
+                         :op1 (z15 / date-entity
+                                   :year 2020))))
+
+# ::id PROXY_LTW_ENG_19951218_0100.9
+(z1 / threaten-01
+    :ARG0 (z2 / delegation
+              :mod (z3 / country
+                       :wiki "Croatia"
+                       :name (z4 / name
+                                 :op1 "Croatia")))
+    :ARG1 (z5 / pull-out-02
+              :ARG1 z2
+              :ARG2 (z6 / negotiate-01
+                        :ARG2 (z7 / reduce-01
+                                  :ARG1 (z8 / arm))))
+    :condition (z9 / meet-01
+                   :polarity -
+                   :ARG1 (z10 / demand-01
+                              :mod (z11 / certain))
+                   :time (z12 / future
+                              :ARG1-of (z13 / have-degree-91
+                                            :ARG2 (z14 / near-02
+                                                       :ARG1 z12)
+                                            :ARG3 (z15 / most)))))

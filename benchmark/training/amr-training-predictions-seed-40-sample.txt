@@ -1,0 +1,85 @@
+# ::id bolt-eng-DF-200-192403-6253769_0154.7
+(z1 / ask-02
+    :ARG0 (z2 / he)
+    :ARG1 (z3 / take-01
+              :ARG0 (z4 / she)
+              :ARG1 (z5 / pill
+                        :time (z6 / date-entity
+                                  :dayperiod (z7 / morning
+                                                 :time (z8 / after))))
+              :ARG1-of (z9 / have-degree-91
+                           :ARG2 (z10 / most)
+                           :ARG3 (z11 / thing
+                                      :ARG1-of (z12 / do-02
+                                                    :ARG0 z2
+                                                    :condition (z13 / circumstance)
+                                                    :purpose (z14 / prevent-01
+                                                                  :ARG0 z2
+                                                                  :ARG1 (z15 / impregnate-01)))
+                                      :ARG1-of (z16 / possible-01))
+                           :mod (z17 / again))))
+
+# ::id bolt-eng-DF-170-181103-8889117_0076.40
+(z1 / contrast-01
+    :ARG1 (z2 / suppose-02
+              :ARG1 (z3 / pay-01
+                        :ARG3 (z4 / and
+                                  :op1 (z5 / road)
+                                  :op2 (z6 / dam)
+                                  :op3 (z7 / bridge))
+                        :instrument (z8 / package
+                                        :ARG1-of (z9 / fail-01)
+                                        :mod (z10 / stimulus))))
+    :ARG2 (z11 / suppose-02
+               :polarity -
+               :ARG1 z3
+               :ARG2 (z12 / pay-01
+                          :ARG3 (z13 / bill
+                                     :topic (z14 / employ-01
+                                                 :polarity -)))))
+
+# ::id bolt-eng-DF-200-192392-4566452_0200.1
+(z1 / post-01
+    :ARG0 (z2 / person
+              :wiki -
+              :name (z3 / name
+                        :op1 "randomgirl"))
+    :ARG1 (z4 / and
+              :op1 (z5 / work-01
+                       :ARG0 z2
+                       :location (z6 / shop))
+              :op2 (z7 / laugh-01
+                       :ARG0 z2
+                       :ARG2 (z8 / man
+                                 :mod (z9 / old)
+                                 :ARG0-of (z10 / pick-up-04
+                                               :ARG1 (z11 / hammock
+                                                          :mod (z12 / banana))
+                                               :time (z13 / week
+                                                          :mod (z14 / other))))))
+    :manner (z15 / original))
+
+# ::id bolt-eng-DF-170-181103-8889674_0060.6
+(z1 / exemplify-01
+    :ARG0 (z2 / believe-01
+              :ARG0 (z3 / some)
+              :ARG1 (z4 / show-01
+                        :ARG0 (z5 / person
+                                  :wiki "Barack_Obama"
+                                  :name (z6 / name
+                                            :op1 "Obama"))
+                        :ARG1 (z7 / lead-02
+                                  :ARG0 z5
+                                  :ARG2 (z8 / reform-01
+                                            :ARG1 (z9 / care-03
+                                                      :ARG1 (z10 / health)))
+                                  :ARG1-of (z11 / weak-02))
+                        :manner (z12 / let-01
+                                     :ARG0 z5
+                                     :ARG1 (z13 / craft-01
+                                                :ARG0 (z14 / government-organization
+                                                           :wiki "United_States_Congress"
+                                                           :name (z15 / name
+                                                                      :op1 "Congress"))
+                                                :ARG1 (z16 / bill)
+                                                :beneficiary z5)))))

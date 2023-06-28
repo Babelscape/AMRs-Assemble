@@ -1,0 +1,85 @@
+# ::id DF-200-192392-456_1160.5
+(z1 / like-01
+    :ARG0 (z2 / i)
+    :ARG1 (z3 / get-05
+              :ARG1 z2
+              :ARG2 (z4 / near-02
+                        :ARG2-of (z5 / have-degree-91
+                                     :ARG1 z3
+                                     :ARG3 (z6 / equal)
+                                     :ARG4 (z7 / possible-01
+                                               :ARG1 z3))))
+    :ARG1-of (z8 / cause-01
+                 :ARG0 (z9 / dislike-01
+                           :ARG0 z2
+                           :ARG1 (z10 / cout-00
+                                      :ARG0 z2
+                                      :ARG1 (z11 / cop)
+                                      :duration (z12 / day
+                                                     :mod (z13 / all))))))
+
+# ::id ENG_DF_000170_20050903_C00020J0V_0001.30
+(z1 / and
+    :op1 (z2 / collect-01
+             :ARG0 (z3 / they)
+             :ARG1 (z4 / box
+                       :ARG0-of (z5 / contain-01
+                                    :ARG1 (z6 / food))
+                       :ARG1-of (z7 / perish-01
+                                    :polarity -))
+             :ARG2 (z8 / and
+                       :op1 (z9 / shelter
+                                :ARG1-of (z10 / local-02))
+                       :op2 (z11 / program
+                                 :mod (z12 / meal))))
+    :op2 (z13 / prepare-01
+              :ARG0 z3
+              :ARG1 z4)
+    :op3 (z14 / help-01
+              :ARG0 z3
+              :ARG1 (z15 / effort-01
+                         :ARG1 (z16 / natural-disaster
+                                    :wiki "Hurricane_Katrina"
+                                    :name (z17 / name
+                                               :op1 "Katrina")))))
+
+# ::id bolt12_91455_5325.1
+(z1 / multi-sentence
+    :snt1 (z2 / easy-05
+              :ARG1 (z3 / no-one))
+    :snt2 (z4 / resemble-01
+              :ARG1 (z5 / life)
+              :ARG2 (z6 / show-04))
+    :snt3 (z7 / obligate-01
+              :ARG1 (z8 / you)
+              :ARG2 (z9 / look-01
+                        :ARG0 z8
+                        :ARG1 (z10 / script))
+              :purpose (z11 / know-01
+                            :ARG0 z8
+                            :ARG1 (z12 / thing
+                                       :manner-of (z13 / perform-01
+                                                       :ARG0 z8)))))
+
+# ::id PROXY_NYT_ENG_20080919_0209.20
+(z1 / promote-02
+    :ARG0 (z2 / person
+              :wiki "Sabahi_Ahmad_Badawi"
+              :name (z3 / name
+                        :op1 "Al-Sistani"))
+    :ARG1 (z4 / and
+              :op1 (z5 / deviate-01
+                       :ARG1 (z6 / sex-01))
+              :op2 (z7 / agenda
+                       :mod (z8 / country
+                                :wiki "Iran"
+                                :name (z9 / name
+                                          :op1 "Iran"))))
+    :location (z10 / country
+                   :wiki "Iraq"
+                   :name (z11 / name
+                              :op1 "Iraq"))
+    :ARG1-of (z12 / cause-01
+                  :ARG0 (z13 / bear-02
+                             :ARG1 z2
+                             :location z8)))
