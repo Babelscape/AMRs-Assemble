@@ -1,11 +1,11 @@
 # AMR Assemble! Ensembling Models for AMR Graphs
 
-This is the repo for [*{AMR}s {A}ssemble*!](https://arxiv.org/abs/2306.10786), a novel approach to AMR ensembling, presented at ACL 2023. This repository provides resources and tools for ensemble modeling of Abstract Meaning Representation (AMR) graphs. 
+This is the repo for [*AMRs Assemble*!](https://arxiv.org/abs/2306.10786), a novel approach to AMR ensembling, presented at ACL 2023. This repository provides resources and tools for ensemble modeling of Abstract Meaning Representation (AMR) graphs. 
 
 ## Features
 
 
-1. **Graph Perplexity Extraction**: "We have extended the SPRING model to extract the perplexity of a graph based on a given sentence and model. This facilitates the subsequent selection of the most suitable graph, as discussed in the paper.
+1. **Graph Perplexity Extraction**: We have extended the SPRING model to extract the perplexity of a graph based on a given sentence and model. This facilitates the subsequent selection of the most suitable graph, as discussed in the paper.
 
 2. **Structural Problem Detection**: Introduces an algorithm to identify structural issues in AMR graphs, ensuring integrity and consistency of parsed representations.
 
@@ -169,5 +169,5 @@ For BLEURT don't use tokenization and run the eval with `https://github.com/goog
 The previously shown commands assume the use of the DFS-based linearization. To use BFS or PENMAN decomment the relevant lines in `configs/config.yaml` (for training). As for the evaluation scripts, substitute the `--penman-linearization --use-pointer-tokens` line with `--use-pointer-tokens` for BFS or with `--penman-linearization` for PENMAN.
 
 ### License
-This project is released under the CC-BY-NC-SA 4.0 license (see `LICENSE`). If you use AMRs-Assemble!, please put a link to this repo.
+This project is released under the CC-BY-NC-SA 4.0 license (see `LICENSE`). If you use AMRs-Assemble!, please reference the paper and put a link to this repo.
 
