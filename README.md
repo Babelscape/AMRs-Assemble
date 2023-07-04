@@ -7,7 +7,7 @@ This is the repo for [*AMRs Assemble*!](https://arxiv.org/abs/2306.10786), a nov
 
 1. **Graph Perplexity Extraction**: We have extended the SPRING model to extract the perplexity of a graph based on a given sentence and model. This facilitates the subsequent selection of the most suitable graph, as discussed in the paper.
 
-2. **Structural Problem Detection**: Introduces an algorithm to identify structural issues in AMR graphs, ensuring integrity and consistency of parsed representations.
+2. **Structural Problem Detection**: Introduces an algorithm to identify structural issues in AMR graphs, ensuring the integrity and consistency of parsed representations.
 
 3. **Corpus Release**: Provides a training, validation, and test corpus of predictions for training AMR ensemble models and establishing a standardized benchmark.
 
@@ -37,7 +37,7 @@ The repository is organized as follows:
 
 ## Pretrained Checkpoints
 
-Here we releasea SPRING model.
+Here we release SPRING model.
 
 ### Text-to-AMR Parsing
 - Model trained in the AMR 3.0 training set: [AMR3.parsing-1.0.tar.bz2](http://nlp.uniroma1.it/AMR/AMR3.parsing-1.0.tar.bz2)
@@ -58,7 +58,7 @@ The code works fine with `torch` 1.5. We recommend the usage of a new `conda` en
 ## Extract Perplexity
 
 ```shell script
-python python bin/extract_perplexity.py \
+python bin/extract_perplexity.py \
     --pred-path data/tmp/amr3.0/pred.amr.txt \
     --perplexity-path data/tmp/amr3.0/pred.perplexity.amr.txt \ 
     --checkpoint  runs/<checkpoint>.pt  \
@@ -72,7 +72,7 @@ python python bin/extract_perplexity.py \
 To check the correctness of AMR graphs and generate files for incorrect graphs, use the following command:
 
 ```shell script
-python python bin/extract_perplexity.py \
+python bin/extract_perplexity.py \
     --input path/to/input_file
 ```
 
@@ -125,7 +125,7 @@ python bin/predict_amrs.py \
 ```
 `gold.amr.txt` and `pred.amr.txt` will contain, respectively, the concatenated gold and the predictions.
 
-To reproduce our paper's results, you will also need need to run the [BLINK](https://github.com/facebookresearch/BLINK) 
+To reproduce our paper's results, you will also need to run the [BLINK](https://github.com/facebookresearch/BLINK) 
 entity linking system on the prediction file (`data/tmp/amr2.0/pred.amr.txt` in the previous code snippet). 
 To do so, you will need to install BLINK, and download their models:
 ```shell script
@@ -166,7 +166,7 @@ To compute BLEU and chrF++, please use `bin/eval_bleu.py`. For METEOR, use https
 For BLEURT don't use tokenization and run the eval with `https://github.com/google-research/bleurt`. Also see the [appendix](docs/appendix.pdf).
 
 ### Linearizations
-The previously shown commands assume the use of the DFS-based linearization. To use BFS or PENMAN decomment the relevant lines in `configs/config.yaml` (for training). As for the evaluation scripts, substitute the `--penman-linearization --use-pointer-tokens` line with `--use-pointer-tokens` for BFS or with `--penman-linearization` for PENMAN.
+The previously shown commands assume the use of the DFS-based linearization. To use BFS or PENMAN uncomment the relevant lines in `configs/config.yaml` (for training). As for the evaluation scripts, substitute the `--penman-linearization --use-pointer-tokens` line with `--use-pointer-tokens` for BFS or with `--penman-linearization` for PENMAN.
 
 ### License
 This project is released under the CC-BY-NC-SA 4.0 license (see `LICENSE`). If you use AMRs-Assemble!, please reference the paper and put a link to this repo.
