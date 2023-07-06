@@ -40,7 +40,7 @@ Clone and install [*SPRING*](https://github.com/SapienzaNLP/spring) repo in the 
 ## Extract Perplexity
 
 ```shell script
-python bin/extract_perplexity.py \
+python src/extract_perplexity.py \
     --pred-path data/tmp/amr3.0/pred.amr.txt \
     --perplexity-path data/tmp/amr3.0/pred.perplexity.amr.txt \ 
     --checkpoint  runs/<checkpoint>.pt  \
@@ -54,7 +54,7 @@ python bin/extract_perplexity.py \
 To check the correctness of AMR graphs and generate files for incorrect graphs, use the following command:
 
 ```shell script
-python bin/extract_perplexity.py \
+python structural-problems/check_graphs.py \
     --input path/to/input_file
 ```
 
@@ -70,7 +70,7 @@ Inside the benchmark folder, you will find separate files for training, validati
 The script select_best_graph.py is provided to extract the best AMR graph based on a specified score from multiple input files. This can be useful when you have multiple versions of AMR graphs and want to select the one with the highest score.
 
 ```shell script
-python select_best_graph.py --path path/to/pred-amr1.txt path/to/pred-amr2.txt ... \
+python structural-problems/select_best_graph.py --path path/to/pred-amr1.txt path/to/pred-amr2.txt ... \
     --output data/tmp/amr3.0/best.amr.txt \ 
     --score-name perplexity \ 
 ```
