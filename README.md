@@ -35,7 +35,7 @@ The repository is organized as follows:
 
 ## Clone Spring Repo
 
-Clone and install [*SPRING*!](https://github.com/SapienzaNLP/spring) repo in the root folder.
+Clone and install [*SPRING*](https://github.com/SapienzaNLP/spring) repo in the root folder.
 
 ## Extract Perplexity
 
