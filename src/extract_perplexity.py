@@ -3,10 +3,62 @@ from pathlib import Path
 import penman
 import torch
 
-from spring_amr import ROOT
-from spring_amr.evaluation import extract_amr_perplexity, compute_smatch
-from spring_amr.penman import encode
-from spring_amr.utils import instantiate_loader, instantiate_model_and_tokenizer
+from spring.spring_amr import ROOT
+from spring.spring_amr.evaluation import extract_amr_perplexity, compute_smatch
+from spring.spring_amr.penman import encode
+from spring.spring_amr.utils import instantiate_loader, instantiate_model_and_tokenizer
+
+from tqdm import tqdm
+import math
+
+
+def extract_amr_perplexity(loader, model, tokenizer):
+    
+    beam_size=1
+    shuffle_orig = loader.shuffle
+    sort_orig = loader.sort
+
+    loader.shuffle = False
+    loader.sort = True
+
+    total = len(loader.dataset)
+    model.eval()
+    model.amr_mode = True
+
+    padding_token_id = 1
+
+    graphs = []
+
+    with tqdm(total=total) as bar:
+        for x, y, extra in loader:
+            decoder_input_ids = y["decoder_input_ids"]
+            labels = y["lm_labels"]
+            pred_graphs = extra['graphs']
+
+            # create decoder attention mask
+            batch_size = decoder_input_ids.size(0)
+            sequence_length = decoder_input_ids.size(1)
+            decoder_attention_mask = torch.ones(batch_size, sequence_length, device=decoder_input_ids.device)
+            padding_mask = (decoder_input_ids == 1)
+            decoder_attention_mask.masked_fill_(padding_mask, 0)
+
+            # calculate logits
+            with torch.no_grad():
+                loss, logits, *_ = model(input_ids=x["input_ids"],
+                                                attention_mask=x["attention_mask"],
+                                                decoder_input_ids=decoder_input_ids,
+                                                decoder_attention_mask=decoder_attention_mask,
+                                                lm_labels=labels)
+            
+            # calculate perplexity
+            for label, logit, graph in zip(labels, logits, pred_graphs):
+                score = F.cross_entropy(logit[:len(logit)], label[:len(logit)], ignore_index=padding_token_id)
+                graph.metadata["perplexity"] = str(math.exp(loss))
+                graphs.append(graph)
+    
+    return graphs
+
+
 
 if __name__ == '__main__':
 

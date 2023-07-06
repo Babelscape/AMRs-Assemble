@@ -28,32 +28,14 @@ If you use the code, please reference this work in your paper:
 The repository is organized as follows:
 
 - `benchmark/`: Contains the datasets for establishing a standardized benchmark to evaluate AMR ensembling models, ensuring fair comparisons.
-- `bin/`: Contains the source code for training  the SPRING model, conducting inference, and extracting perplexity.
-- `config/`: Contains configuration files for training the SPRING model.
-- `data/`: should contain the training, validation, and test corpora, along with the necessary vocab of SPRING.
+- `src/`: Contains the source code for extracting perplexity.
+- `spring/`: SPRING repo.
 - `structural-problems/`: Contains the source code for identifying structural issues in AMR graphs.
-- `spring_amr/`: Contains the SPRING model code.
 - `docs/`: Documentation and supplementary material related to the project.
 
-## Pretrained Checkpoints
+## Clone Spring Repo
 
-Here we release SPRING model.
-
-### Text-to-AMR Parsing
-- Model trained in the AMR 3.0 training set: [AMR3.parsing-1.0.tar.bz2](http://nlp.uniroma1.it/AMR/AMR3.parsing-1.0.tar.bz2)
-
-If you need the checkpoints of other experiments in the paper, please send us an email.
-
-## Installation
-```shell script
-cd spring
-pip install -r requirements.txt
-pip install -e .
-```
-
-The code only works with `transformers` < 3.0 because of a disrupting change in positional embeddings.
-The code works fine with `torch` 1.5. We recommend the usage of a new `conda` env.
-
+Clone and install [*SPRING*!](https://github.com/SapienzaNLP/spring) repo in the root folder.
 
 ## Extract Perplexity
 
@@ -93,81 +75,13 @@ python select_best_graph.py --path path/to/pred-amr1.txt path/to/pred-amr2.txt .
     --score-name perplexity \ 
 ```
 
-## Previous SPRING code
-
-### Train
-Modify `sweeped.yaml` in `configs`. Instructions in comments within the file. Also see the [appendix](docs/appendix.pdf).
-
-#### Text-to-AMR
-```shell script
-python bin/train.py --config configs/config.yaml --direction amr
-```
-Results in `runs/`
-
-#### AMR-to-Text
-```shell script
-python bin/train.py --config configs/config.yaml --direction text
-```
-Results in `runs/`
-
-### Evaluate
-#### Text-to-AMR
-```shell script
-python bin/predict_amrs.py \
-    --datasets <AMR-ROOT>/data/amrs/split/test/*.txt \
-    --gold-path data/tmp/amr2.0/gold.amr.txt \
-    --pred-path data/tmp/amr2.0/pred.amr.txt \
-    --checkpoint runs/<checkpoint>.pt \
-    --beam-size 5 \
-    --batch-size 500 \
-    --device cuda \
-    --penman-linearization --use-pointer-tokens
-```
-`gold.amr.txt` and `pred.amr.txt` will contain, respectively, the concatenated gold and the predictions.
-
-To reproduce our paper's results, you will also need to run the [BLINK](https://github.com/facebookresearch/BLINK) 
-entity linking system on the prediction file (`data/tmp/amr2.0/pred.amr.txt` in the previous code snippet). 
-To do so, you will need to install BLINK, and download their models:
-```shell script
-git clone https://github.com/facebookresearch/BLINK.git
-cd BLINK
-pip install -r requirements.txt
-sh download_blink_models.sh
-cd models
-wget http://dl.fbaipublicfiles.com/BLINK//faiss_flat_index.pkl
-cd ../..
-```
-Then, you will be able to launch the `blinkify.py` script:
-```shell
-python bin/blinkify.py \
-    --datasets data/tmp/amr2.0/pred.amr.txt \
-    --out data/tmp/amr2.0/pred.amr.blinkified.txt \
-    --device cuda \
-    --blink-models-dir BLINK/models
-```
-To have comparable Smatch scores you will also need to use the scripts available at https://github.com/mdtux89/amr-evaluation, which provide
-results that are around ~0.3 Smatch points lower than those returned by `bin/predict_amrs.py`.
-
-#### AMR-to-Text
-```shell script
-python bin/predict_sentences.py \
-    --datasets <AMR-ROOT>/data/amrs/split/test/*.txt \
-    --gold-path data/tmp/amr2.0/gold.text.txt \
-    --pred-path data/tmp/amr2.0/pred.text.txt \
-    --checkpoint runs/<checkpoint>.pt \
-    --beam-size 5 \
-    --batch-size 500 \
-    --device cuda \
-    --penman-linearization --use-pointer-tokens
-```
-`gold.text.txt` and `pred.text.txt` will contain, respectively, the concatenated gold and the predictions.
-For BLEU, chrF++, and Meteor in order to be comparable you will need to tokenize both gold and predictions using [JAMR tokenizer](https://github.com/redpony/cdec/blob/master/corpus/tokenize-anything.sh).
-To compute BLEU and chrF++, please use `bin/eval_bleu.py`. For METEOR, use https://www.cs.cmu.edu/~alavie/METEOR/ .
-For BLEURT don't use tokenization and run the eval with `https://github.com/google-research/bleurt`. Also see the [appendix](docs/appendix.pdf).
-
-### Linearizations
-The previously shown commands assume the use of the DFS-based linearization. To use BFS or PENMAN uncomment the relevant lines in `configs/config.yaml` (for training). As for the evaluation scripts, substitute the `--penman-linearization --use-pointer-tokens` line with `--use-pointer-tokens` for BFS or with `--penman-linearization` for PENMAN.
-
 ### License
 This project is released under the CC-BY-NC-SA 4.0 license (see `LICENSE`). If you use AMRs-Assemble!, please reference the paper and put a link to this repo.
 
+## Contributing
+
+We welcome contributions to the Cross-lingual AMR Aligner project. If you have any ideas, bug fixes, or improvements, feel free to open an issue or submit a pull request.
+
+## Contact
+
+For any questions or inquiries, please contact Abelardo Carlos Martínez Lorenzo at martines@babelscape.com or Pere-Lluís Huguet Cabot at huguetcabot@bablescape.com
