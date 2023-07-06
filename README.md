@@ -75,7 +75,7 @@ python select_best_graph.py --path path/to/pred-amr1.txt path/to/pred-amr2.txt .
     --score-name perplexity \ 
 ```
 
-### License
+## License
 This project is released under the CC-BY-NC-SA 4.0 license (see `LICENSE`). If you use AMRs-Assemble!, please reference the paper and put a link to this repo.
 
 ## Contributing
